@@ -1,0 +1,323 @@
+/* ==========================================================================
+   Responsive Architecture
+   Targeting: Mobile (<768px), Tablet (<1024px), Desktop (>1280px)
+   ========================================================================== */
+
+/* --- Mobile Global Variables & Resets --- */
+@media (max-width: 768px) {
+    :root {
+        /* Reduce font sizes for smaller screens */
+        --font-size-h1: 3rem;
+        --font-size-h2: 2.5rem;
+    }
+
+    /* Disable custom cursor on touch devices */
+    * {
+        cursor: auto !important;
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none !important;
+    }
+
+    /* Global Padding Reduction */
+    section {
+        padding: 4rem 1.5rem !important;
+    }
+}
+
+/* --- Navigation Bar --- */
+@media (max-width: 768px) {
+    .navbar-container {
+        position: fixed;
+        /* Stick to top */
+        top: 0;
+        padding: 0.5rem;
+    }
+
+    .navbar-cardboard {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.8rem;
+        transform: rotate(0deg) !important;
+        width: 100%;
+        margin: 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    .navbar-link-item a {
+        font-size: 1.1rem;
+        background: rgba(255, 255, 255, 0.4);
+        /* Better touch visibility */
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+    }
+}
+
+/* --- Hero Section --- */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        /* Image on top? Or text? User said Stack Image ABOVE Text usually, but checked User Req: "Hero: Stack image above text" */
+        text-align: center;
+        padding-top: 6rem;
+        /* clear navbar */
+    }
+
+    /* If styles/hero.css isn't using flex for container, we might need to target specific classes. 
+       Assuming standard flex layout based on other files. */
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 3rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* --- About Page --- */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .about-hero-image-container {
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        top: 0;
+        transform: rotate(1deg);
+        /* Slight rotation ok, but not too wild */
+    }
+
+    .about-heading {
+        font-size: 3rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .bio-text {
+        text-align: left;
+        /* Keep text readable */
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Work Showcase (Lokkee Style) --- */
+@media (max-width: 1024px) {
+
+    .work-item,
+    .work-item.align-left,
+    .work-item.align-right {
+        flex-direction: column !important;
+        /* Force stack */
+        gap: 3rem;
+        margin-bottom: 5rem;
+    }
+
+    .work-image-container {
+        width: 100%;
+        max-width: 100%;
+        transform: rotate(0deg) !important;
+        /* Flatten for space */
+    }
+
+    .work-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .work-project-title {
+        font-size: 2.5rem;
+    }
+
+    .work-number {
+        display: none;
+        /* Hide huge numbers on mobile to save space */
+    }
+
+    /* Adjust tapes */
+    .work-tape {
+        transform: scale(0.7);
+    }
+}
+
+/* --- Skills Page --- */
+@media (max-width: 768px) {
+    .skills-title {
+        font-size: 3rem;
+    }
+
+    /* Stack Backend Diagram */
+    .backend-diagram-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .diagram-arrow {
+        transform: rotate(90deg);
+        /* Point down */
+        margin: 1rem 0;
+    }
+
+    .diagram-block {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        min-height: 80px;
+    }
+
+    /* Sticky Notes */
+    .tools-grid {
+        gap: 1.5rem;
+    }
+
+    .sticky-note {
+        width: 45%;
+        /* 2 col on tablet/large mobile */
+        height: auto;
+        aspect-ratio: 1;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sticky-note {
+        width: 100%;
+        /* 1 col on small mobile */
+    }
+}
+
+/* --- Contact Section --- */
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 350px;
+        /* Full width but contained */
+    }
+}
+
+/* --- Animation & Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --- Doodles - Mobile Override --- */
+@media (max-width: 768px) {
+    .doodle-layer {
+        display: block !important;
+        /* Override the 'none' from doodles.css */
+    }
+
+    .doodle {
+        display: none;
+        /* Hide all by default */
+    }
+
+    /* Show only specific ones */
+    .doodle-sun,
+    .doodle-rocket {
+        display: block;
+        opacity: 0.05;
+        /* Even more subtle */
+    }
+
+    .doodle-sun {
+        top: 5%;
+        right: 10%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .doodle-rocket {
+        bottom: 5%;
+        left: 5%;
+        top: auto;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* --- Timeline (Career) Adaptation --- */
+@media (max-width: 1024px) {
+    .career-timeline-container {
+        position: relative !important;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 2rem 1rem;
+        justify-content: flex-start;
+        gap: 2rem;
+        background: rgba(255, 255, 255, 0.5);
+        /* Background for readability */
+        margin-bottom: 2rem;
+        display: block !important;
+        /* Override display:none */
+        /* height: auto; remove fixed height */
+    }
+
+    .career-nodes-wrapper {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        gap: 2rem;
+        padding: 0;
+        height: auto;
+    }
+
+    .career-svg-path {
+        display: none;
+    }
+
+    .career-node {
+        flex-direction: column;
+        min-width: 120px;
+        text-align: center;
+    }
+
+    .career-label {
+        position: relative;
+        left: auto;
+        margin-top: 1rem;
+        transform: none !important;
+        opacity: 1 !important;
+        /* Always show on mobile so they can see it */
+        font-size: 0.8rem;
+    }
+}

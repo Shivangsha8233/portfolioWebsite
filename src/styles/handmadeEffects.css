@@ -1,0 +1,80 @@
+/* Handmade Interaction Effects */
+
+/* --- Paper Rustle Effect --- */
+.paper-rustle {
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.paper-rustle:hover {
+    transform: translateY(-2px) rotate(0.5deg);
+    box-shadow: 0 8px 16px rgba(59, 47, 47, 0.15), 0 4px 6px rgba(59, 47, 47, 0.1);
+}
+
+.paper-rustle:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 4px rgba(59, 47, 47, 0.1);
+}
+
+
+/* --- Scroll Indicator --- */
+.scroll-indicator-container {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    height: 300px;
+    width: 6px;
+    transform: translateY(-50%);
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .scroll-indicator-container {
+        right: 10px;
+        height: 200px;
+    }
+}
+
+
+/* --- Crayon Divider --- */
+.crayon-divider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.crayon-divider-path {
+    fill: none;
+    stroke: var(--color-ink, #3b2f2f);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.15;
+    /* Rough edge simulation using dasharray if SVG filter not available */
+}
+
+
+/* --- Cursor Trail --- */
+.cursor-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    /* Just below custom cursor (9999) */
+}
+
+@media (pointer: coarse) {
+    .cursor-trail-canvas {
+        display: none;
+    }
+}

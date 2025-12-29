@@ -1,0 +1,88 @@
+/* Desk Narrative & Transitions */
+
+.desk-transition-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    backface-visibility: hidden;
+}
+
+/* --- Career Timeline Removed --- */
+
+/* --- Backend Diagram --- */
+.backend-diagram-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    perspective: 1000px;
+}
+
+.diagram-block {
+    background: #e3dac9;
+    border: 2px solid #3b2f2f;
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    width: 140px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    box-shadow: 4px 4px 0 rgba(59, 47, 47, 0.2);
+}
+
+.diagram-block:hover {
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: 6px 8px 0 rgba(59, 47, 47, 0.15);
+    background: #ece4d5;
+}
+
+.diagram-block::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 6px;
+    background: rgba(59, 47, 47, 0.2);
+    /* Tape look */
+    z-index: 10;
+}
+
+.diagram-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--color-ink);
+    opacity: 0.5;
+}
+
+.block-expanded-content {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.2;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .career-timeline-container {
+        display: none;
+    }
+
+    .backend-diagram-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .diagram-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+}

@@ -1,0 +1,55 @@
+/* Footer Styles */
+.footer-section {
+    padding: 4rem 2rem;
+    background-color: var(--color-ink, #3b2f2f);
+    color: var(--color-paper, #f7f3e8);
+    position: relative;
+    text-align: center;
+    border-top: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title {
+    font-family: var(--font-hand, 'Patrick Hand', cursive);
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: var(--color-paper, #f7f3e8);
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-hand, 'Patrick Hand', cursive);
+    font-size: 1.2rem;
+}
+
+.footer-link {
+    color: var(--color-paper, #f7f3e8);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #e74c3c;
+}
+
+.footer-divider {
+    opacity: 0.5;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    font-family: sans-serif;
+}

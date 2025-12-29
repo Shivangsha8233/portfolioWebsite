@@ -1,0 +1,233 @@
+:root {
+    --color-paper: #e3dac9;
+    --color-ink: #3b2f2f;
+    --font-hand: 'Patrick Hand', cursive, sans-serif;
+}
+
+/* Work Section Container */
+.work-section {
+    position: relative;
+    background-color: var(--color-paper);
+    /* Uses global paper color/texture */
+    padding: 8rem 2rem;
+    overflow: hidden;
+}
+
+.work-header {
+    text-align: center;
+    margin-bottom: 8rem;
+    position: relative;
+    z-index: 10;
+}
+
+.work-title {
+    font-family: var(--font-hand);
+    font-size: 5rem;
+    color: var(--color-ink);
+    display: inline-block;
+    position: relative;
+    /* Slight rotation for title */
+    transform: rotate(-2deg);
+}
+
+.work-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    width: 120%;
+    height: 4px;
+    background-color: var(--color-ink);
+    opacity: 0.2;
+    border-radius: 2px;
+    transform: rotate(1deg);
+}
+
+/* Individual Work Item */
+.work-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    /* Occupy most of viewport */
+    margin-bottom: 6rem;
+    position: relative;
+    gap: 4rem;
+}
+
+/* Alternating Layout */
+.work-item.align-left {
+    flex-direction: row;
+}
+
+.work-item.align-right {
+    flex-direction: row-reverse;
+}
+
+/* Image Container (Cardboard Panel) */
+.work-image-container {
+    flex: 1.5;
+    position: relative;
+    padding: 1rem;
+    background-color: #dccbae;
+    /* Cardboard color */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: rotate(1deg);
+    /* Default rotation, overridden by JS */
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 800px;
+}
+
+/* Inner Image Frame */
+.work-image-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border: 1px solid rgba(59, 47, 47, 0.1);
+    background-color: #fff;
+}
+
+.work-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: grayscale(20%);
+}
+
+.work-image-container:hover .work-image {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+/* Masking Tape Accents */
+.work-tape {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    background-color: #f5f0d8;
+    /* Tape color */
+    opacity: 0.85;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+}
+
+.tape-top-left {
+    top: -10px;
+    left: 20%;
+    transform: rotate(-3deg);
+}
+
+.tape-top-right {
+    top: -8px;
+    right: 20%;
+    transform: rotate(2deg);
+}
+
+.tape-bottom-left {
+    bottom: -10px;
+    left: 30%;
+    transform: rotate(4deg);
+}
+
+.tape-bottom-right {
+    bottom: -8px;
+    right: 10%;
+    transform: rotate(-2deg);
+}
+
+
+/* Content Container */
+.work-content {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+    z-index: 10;
+}
+
+.work-project-title {
+    font-family: var(--font-hand);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--color-ink);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.work-project-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-ink);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.work-link {
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.work-link:hover {
+    color: #e74c3c;
+    border-bottom-color: #e74c3c;
+    gap: 1rem;
+    /* Arrow movement */
+}
+
+/* Exhibition Number */
+.work-number {
+    font-family: 'Impact', sans-serif;
+    font-size: 8rem;
+    color: rgba(59, 47, 47, 0.05);
+    position: absolute;
+    top: -4rem;
+    z-index: -1;
+    user-select: none;
+}
+
+.align-left .work-number {
+    left: -2rem;
+}
+
+.align-right .work-number {
+    right: -2rem;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 968px) {
+    .work-item {
+        flex-direction: column !important;
+        gap: 2rem;
+        margin-bottom: 6rem;
+        min-height: auto;
+    }
+
+    .work-image-container {
+        width: 100%;
+        transform: rotate(0deg) !important;
+    }
+
+    .work-content {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .work-project-title {
+        font-size: 2.5rem;
+    }
+}

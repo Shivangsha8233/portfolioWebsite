@@ -1,0 +1,97 @@
+/* Print Mode Styles */
+@media print {
+
+    /* Hide non-essential elements */
+    .navbar-container,
+    .doodle-layer,
+    .story-timeline-container,
+    .career-timeline-container,
+    .cursor-trail-canvas,
+    .timeline-icon-wrapper,
+    .scroll-indicator-container,
+    .crayon-divider-container,
+    .custom-cursor,
+    .page-intro-tear,
+    .resume-envelope-container,
+    .print-mode-toggle {
+        display: none !important;
+    }
+
+    /* Reset Body / Layout */
+    body {
+        background: white !important;
+        color: black !important;
+        overflow: visible !important;
+    }
+
+    #root {
+        overflow: visible !important;
+    }
+
+    /* Flatten and Clean Content */
+    .hero-section,
+    .about-page,
+    .work-section,
+    .skills-section,
+    .footer-section {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 2rem 0 !important;
+        page-break-inside: avoid;
+    }
+
+    /* Typography Overrides for Print Legibility */
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    span,
+    a {
+        color: black !important;
+        text-shadow: none !important;
+        filter: none !important;
+    }
+
+    .hero-title-main {
+        font-size: 3rem !important;
+    }
+
+    /* Links */
+    a {
+        text-decoration: underline;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+
+    /* Cards */
+    .work-item,
+    .skill-tag,
+    .diagram-block {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        transform: none !important;
+        background: white !important;
+        page-break-inside: avoid;
+    }
+
+    .work-content {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .work-image-container {
+        display: none;
+        /* Often checking images in print is disconnected, optional */
+    }
+
+    /* Ensure diagram details are expanded or static */
+    .block-expanded-content {
+        display: block !important;
+        height: auto !important;
+        opacity: 1 !important;
+    }
+}

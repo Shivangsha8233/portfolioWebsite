@@ -1,0 +1,129 @@
+:root {
+    --color-kraft: #dccbae;
+    --color-kraft-dark: #ccbc9f;
+    --color-ink: #3b2f2f;
+    --color-tape: #f5f0d8;
+    --shadow-paper: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-lift: 0 12px 24px rgba(0, 0, 0, 0.15), 0 8px 12px rgba(0, 0, 0, 0.1);
+    --font-hand: 'Patrick Hand', cursive, sans-serif;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 1rem;
+    z-index: 1000;
+    width: 100%;
+    pointer-events: none;
+    /* Let clicks pass through empty space */
+}
+
+.navbar-cardboard {
+    pointer-events: auto;
+    /* Re-enable clicks on the bar */
+    background-color: var(--color-kraft);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    padding: 0.8rem 2rem;
+    border-radius: 2px;
+    box-shadow: var(--shadow-paper);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    /* Slight rotation for handmade feel */
+    transform: rotate(-0.5deg);
+}
+
+/* Masking Tape Illusion */
+.navbar-cardboard::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20%;
+    width: 40px;
+    height: 16px;
+    background-color: var(--color-tape);
+    opacity: 0.85;
+    transform: rotate(-2deg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-cardboard::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 20%;
+    width: 35px;
+    height: 16px;
+    background-color: var(--color-tape);
+    opacity: 0.85;
+    transform: rotate(3deg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-link-item a {
+    font-family: var(--font-hand);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.navbar-link-item a:hover {
+    color: #5a4a4a;
+}
+
+/* Underline Animation */
+.link-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-ink);
+    border-radius: 4px;
+    transform-origin: left center;
+    opacity: 0.7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .navbar-container {
+        top: 0.5rem;
+    }
+
+    .navbar-cardboard {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 1.5rem;
+        width: 90%;
+    }
+
+    .navbar-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

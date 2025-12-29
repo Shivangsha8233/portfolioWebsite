@@ -1,0 +1,271 @@
+/* Skills Page - Cardboard Desk Theme */
+
+.skills-page-container {
+    padding-top: 100px;
+    /* Space for navbar */
+    padding-bottom: 80px;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Intro Section */
+.skills-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    position: relative;
+}
+
+.skills-title {
+    font-family: var(--font-hand);
+    font-size: 3.5rem;
+    color: var(--color-ink);
+    margin-bottom: 1rem;
+    transform: rotate(-1deg);
+    display: inline-block;
+    border-bottom: 3px solid rgba(59, 47, 47, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.skills-philosophy {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-ink);
+    opacity: 0.9;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Section Headings */
+.section-heading-wrapper {
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.handwritten-heading {
+    font-family: var(--font-hand);
+    font-size: 2.5rem;
+    color: var(--color-ink);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.heading-underline {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 12px;
+    background-color: rgba(231, 76, 60, 0.1);
+    /* Faint marker stroke */
+    border-radius: 6px;
+    z-index: 0;
+    transform: translateX(-50%) rotate(-1deg);
+}
+
+/* Backend Section (Primary) */
+.backend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.cardboard-box {
+    background-color: #d6c4a6;
+    /* Cardboard color */
+    border: 2px solid #a89078;
+    border-radius: 4px;
+    /* Slight rounded corners, not too sharp */
+    padding: 1.5rem;
+    position: relative;
+    box-shadow:
+        5px 5px 0 rgba(0, 0, 0, 0.1),
+        /* Hard shadow for thickness */
+        10px 10px 20px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for lift */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.box-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.05);
+    /* Top flap crease */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.box-label {
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    color: var(--color-ink);
+    border-bottom: 2px dashed rgba(59, 47, 47, 0.3);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-point {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-ink);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+.skill-bullet {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-ink);
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 6px;
+    opacity: 0.6;
+}
+
+/* Frontend Section (Secondary) */
+.frontend-container {
+    background-color: #fffdf5;
+    /* Paper white */
+    padding: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Flat paper shadow */
+    margin-bottom: 5rem;
+    position: relative;
+    transform: rotate(0.5deg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.paper-column h4 {
+    font-family: var(--font-hand);
+    font-size: 1.3rem;
+    color: #e74c3c;
+    /* Red marker accent */
+    margin-bottom: 1rem;
+}
+
+/* Tools Section (Sticky Notes) */
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.sticky-note {
+    width: 220px;
+    height: 220px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: default;
+    position: relative;
+}
+
+.sticky-yellow {
+    background-color: #fef9a7;
+    transform: rotate(-2deg);
+}
+
+.sticky-pink {
+    background-color: #ffdae0;
+    transform: rotate(1.5deg);
+}
+
+.sticky-blue {
+    background-color: #d4f0f0;
+    transform: rotate(-1deg);
+}
+
+.sticky-green {
+    background-color: #dcfce7;
+    transform: rotate(2deg);
+}
+
+.sticky-note:hover {
+    transform: scale(1.05) rotate(0) !important;
+    z-index: 10;
+    box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-title {
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Growth Section */
+.growth-section {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    border-top: 2px dashed rgba(59, 47, 47, 0.2);
+    border-bottom: 2px dashed rgba(59, 47, 47, 0.2);
+}
+
+.growth-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-ink);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-page-container {
+        padding-top: 80px;
+        width: 95%;
+    }
+
+    .skills-title {
+        font-size: 2.5rem;
+    }
+
+    .frontend-container {
+        padding: 1.5rem;
+        transform: rotate(0);
+    }
+
+    .sticky-note {
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        transform: rotate(0) !important;
+        /* Straigthen on mobile */
+    }
+}
