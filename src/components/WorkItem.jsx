@@ -74,11 +74,11 @@ export default function WorkItem({ project, index }) {
                             <div className="case-study-content">
                                 <div className="case-study-section">
                                     <h4 className="cs-heading">The Challenge</h4>
-                                    <p>Create a unique digital experience that stands out in a crowded market.</p>
+                                    <p>{project.challenge || "Create a unique digital experience that stands out in a crowded market."}</p>
                                 </div>
                                 <div className="case-study-section">
                                     <h4 className="cs-heading">Solution</h4>
-                                    <p>Used React and Framer Motion to build a custom physics-based interaction system.</p>
+                                    <p>{project.solution || "Used React and Framer Motion to build a custom physics-based interaction system."}</p>
                                 </div>
 
                             </div>

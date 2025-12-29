@@ -1,5 +1,14 @@
 export const projects = [
     {
+        id: 0, // Unique low ID to stay at top
+        title: "The Beast",
+        description: "Distributed Rate Limiter with multi-region sync & 100k+ RPS support.",
+        url: "https://thebeastreal.netlify.app/",
+        image: "/images/the-beast.png",
+        challenge: "Build a distributed rate limiting system that works across multiple data centers with eventual consistency, supports multiple algorithms (Token Bucket, Leaky Bucket, Sliding Window), and can handle millions of requests per second.",
+        solution: "Architecture using Node.js clustering, Redis with Lua scripts for atomicity, and CRDTs for multi-region sync. Features include a custom DSL for dynamic rules, adaptive throttling based on system health, and a 'Time-Travel' debugging system.",
+    },
+    {
         id: 1,
         title: "StreamVerse",
         description: "Watch-together streaming web experience",
