@@ -11,6 +11,7 @@ import Footer from './sections/Footer';
 import About from './pages/About';
 import SkillsPage from './pages/Skills';
 import CursorTrail from './components/CursorTrail';
+import CrayonDoodleLayer from './components/CrayonDoodleLayer';
 
 import CrayonDivider from './components/CrayonDivider';
 import DeskTransition from './components/DeskTransition';
@@ -32,6 +33,7 @@ function App() {
                         <DeskTransition>
                             <DoodleLayer />
                             <AnimeDoodleLayer />
+                            <CrayonDoodleLayer />
                             <Hero />
                             <CrayonDivider rotate={-1} />
                             <AboutPreview />
@@ -43,11 +45,13 @@ function App() {
                     } />
                     <Route path="/about" element={
                         <DeskTransition>
+                            <CrayonDoodleLayer />
                             <About />
                         </DeskTransition>
                     } />
                     <Route path="/skills" element={
                         <DeskTransition>
+                            <CrayonDoodleLayer />
                             <SkillsPage />
                         </DeskTransition>
                     } />
